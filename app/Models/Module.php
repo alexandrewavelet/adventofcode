@@ -11,8 +11,8 @@ class Module
         $this->mass = $mass;
     }
 
-    public function getFuelRequirements(): int
+    public function getFuelRequirement(): int
     {
-        return floor($this->mass / 3) - 2;
+        return $this->mass ? floor($this->mass / 3) - 2 : 0;
     }
 }

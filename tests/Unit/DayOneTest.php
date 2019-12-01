@@ -14,9 +14,12 @@ class DayOneTest extends TestCase
      */
     public function testFuelRequirements()
     {
-        $this->assertEquals(2, (new Module(12))->getFuelRequirements());
-        $this->assertEquals(2, (new Module(14))->getFuelRequirements());
-        $this->assertEquals(654, (new Module(1969))->getFuelRequirements());
-        $this->assertEquals(33583, (new Module(100756))->getFuelRequirements());
+        $this->assertEquals(2, (new Module(12))->getFuelRequirement());
+        $this->assertEquals(2, (new Module(14))->getFuelRequirement());
+        $this->assertEquals(654, (new Module(1969))->getFuelRequirement());
+        $this->assertEquals(33583, (new Module(100756))->getFuelRequirement());
+
+        // assert that no mass requires 0 fuel
+        $this->assertEquals(0, (new Module(0))->getFuelRequirement());
     }
 }
