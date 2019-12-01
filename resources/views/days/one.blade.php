@@ -3,5 +3,6 @@
 @section('title', 'Day 1')
 
 @section('day')
-    <p>Answer of the day: <span class="bold">{{ $fuel }}</span></p>
+    <p>Amount of fuel for modules only: <span class="bold">{{ $fuel }}</span></p>
+    <p>Full amount of fuel: <span class="bold">{{ $full_fuel }}</span></p>
 @endsection

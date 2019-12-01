@@ -14,9 +14,9 @@ class DaysController extends BaseController
         $inputs = Storage::disk('inputs')->get('day_one.txt');
 
         foreach (explode("\r\n", $inputs) as $input) {
-            $fuel_total += (new Module((int) $input))->getFuelRequirement();
+            $fuel_total += (new Module((int) $input))->getModuleFuelRequirement();
         }
 
-        return view('days.one', ['fuel' => $fuel_total]);
+        return view('days.one', ['fuel' => $fuel_total, 'full_fuel' => 0]);
     }
 }
