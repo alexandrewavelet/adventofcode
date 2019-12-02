@@ -18,4 +18,5 @@ Route::get('/', function () {
 Route::prefix('days')->name('days.')->group(function () {
     Route::get('1', 'DaysController@one')->name('one');
     Route::get('2', 'DaysController@two')->name('two');
+    Route::get('3', 'DaysController@three')->name('three');
 });

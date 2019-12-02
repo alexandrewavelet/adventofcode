@@ -22,6 +22,7 @@
                 <div class="links">
                     <a href="{{ route('days.one') }}">Day 1</a>
                     <a href="{{ route('days.two') }}">Day 2</a>
+                    <a href="{{ route('days.three') }}">Day 3</a>
                 </div>
             </div>
         </div>

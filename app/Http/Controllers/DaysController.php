@@ -4,11 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Intcode;
 use App\Models\Module;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\View;
 
 class DaysController extends BaseController
 {
+    function __construct(Request $request)
+    {
+        $path = explode('/', $request->path());
+
+        View::share('day', end($path));
+    }
+
+
     public function one()
     {
         $fuel_modules = $fuel_total = 0;
@@ -59,5 +69,10 @@ class DaysController extends BaseController
             'alarm' => $alarm->get(0),
             'code' => 100 * $noun + $verb,
         ]);
+    }
+
+    public function three()
+    {
+        return view('days.three');
     }
 }

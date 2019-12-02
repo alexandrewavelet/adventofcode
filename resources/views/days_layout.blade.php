@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title')</title>
+        <title>Day {{ $day }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -16,8 +16,12 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Advent of code
+                    Advent of code: Day {{ $day }}
                 </div>
+
+                <a href="https://adventofcode.com/2019/day/{{ $day }}">
+                    @yield('challenge')
+                </a>
 
                 @yield('day')
 

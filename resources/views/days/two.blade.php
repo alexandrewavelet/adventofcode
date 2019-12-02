@@ -1,6 +1,6 @@
 @extends('days_layout')
 
-@section('title', 'Day 2')
+@section('challenge', '1202 Program Alarm');
 
 @section('day')
     <p>Position 0 of restored Gravity Assist Program: <span class="bold">{{ $alarm }}</span></p>
