@@ -3,5 +3,5 @@
 @section('title', 'Day 2')
 
 @section('day')
-    <p>Answer for day 2: <span class="bold">TBD</span></p>
+    <p>Position 0 of restored Gravity Assist Program: <span class="bold">{{ $alarm }}</span></p>
 @endsection

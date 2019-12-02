@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Intcode;
 use App\Models\Module;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
@@ -22,12 +23,22 @@ class DaysController extends BaseController
 
         return view('days.one', [
             'fuel_modules' => $fuel_modules,
-            'fuel_total' => $fuel_total
+            'fuel_total' => $fuel_total,
         ]);
     }
 
     public function two()
     {
-        return view('days.two');
+        $input = Storage::disk('inputs')->get('day_two.txt');
+
+        $program = explode(',', $input);
+        $program[1] = 12;
+        $program[2] = 2;
+
+        $alarm = (new Intcode)->process($program);
+
+        return view('days.two', [
+            'alarm' => $alarm->get(0),
+        ]);
     }
 }
