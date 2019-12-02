@@ -7,11 +7,6 @@ use Tests\TestCase;
 
 class DayOneTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
     public function testFuelRequirements()
     {
         $this->assertEquals(2, (new Module(12))->getModuleFuelRequirement());

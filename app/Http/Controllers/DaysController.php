@@ -25,4 +25,9 @@ class DaysController extends BaseController
             'fuel_total' => $fuel_total
         ]);
     }
+
+    public function two()
+    {
+        return view('days.two');
+    }
 }
