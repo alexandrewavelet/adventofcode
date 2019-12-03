@@ -47,7 +47,7 @@ class Circuit
                 + abs($coordinates['y'] - self::ORIGIN_COORDINATES['y']);
         });
 
-        return $intersects_manhattan_distances->min();
+        return $intersects_manhattan_distances->min() ?: 0;
     }
 
     public function trace(Collection $directions): Collection
@@ -65,7 +65,7 @@ class Circuit
                             'x' => $current['x'],
                             'y' => $current['y']++,
                         ];
-                    }
+                    };
                     break;
 
                 case self::ORIENTATION_DOWN:
